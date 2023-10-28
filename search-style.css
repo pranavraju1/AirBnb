@@ -105,9 +105,9 @@
 .map{
     width: 600px;
     height: 652px;
-    flex-shrink: 0;
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     outline: 3px solid black;
+    position: sticky;
+    top: 0;
 }
 #card{
     display: flex;
