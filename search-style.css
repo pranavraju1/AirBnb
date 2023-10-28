@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 .nav-container{
-    outline: 3px solid red;
+    /* outline: 3px solid red; */
     height: auto;
     width: 100%;
     padding: 24px 24px 16px 24px;
@@ -47,7 +47,7 @@
     height: 32px;
     align-self: stretch;
     border-radius: 100px;
-    background: #DE3151;
+    /* background: #DE3151; */
   }
   .nav1-3{
     display: flex;
@@ -100,7 +100,7 @@
     gap: 24px;
     flex: 1 0 0;
     align-self: stretch;
-    outline: 3px solid orange;
+    /* outline: 3px solid orange; */
 }
 .map{
     width: 600px;

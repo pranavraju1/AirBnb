@@ -3,7 +3,7 @@ const in_date = localStorage.getItem("in_date");
 const out_date = localStorage.getItem("out_date");
 const guests = localStorage.getItem("guests");
 
-console.log(locate, in_date, out_date, guests);
+// console.log(locate, in_date, out_date, guests);
 
 const location_name = document.getElementById("location_name");
 location_name.innerText = locate;
@@ -39,7 +39,7 @@ getData();
 
 function renderData(arrOfHotels) {
   DATA = arrOfHotels;
-  console.log(DATA);
+  // console.log(DATA);
   function viewall() {
     const details = document.getElementById("details");
     for (let i = 0; i < 10; i++) {
@@ -65,31 +65,27 @@ function renderData(arrOfHotels) {
           card.appendChild(image);
 
           const card_detail = document.createElement("div");
-          card_detail.id = "card-detail";
-
-          const c1 = document.createElement("div");
-          c1.innerText = "Entire home in Bordeaux";
-          card_detail.appendChild(c1);
+          card_detail.className = "card-detail";
 
           const c2 = document.createElement("div");
           c2.innerText = DATA[i].name;
-          c2.id = "NAME";
+          c2.className = "NAME";
           card_detail.appendChild(c2);
 
           const c3 = document.createElement("div");
           c3.innerText =
             "4-6 guests · Entire Home · 5 beds · 3 bath . Wifi · Kitchen · Free Parking";
-          c3.id = "DETAILS";
+          c3.className = "DETAILS";
           card_detail.appendChild(c3);
 
           const c4 = document.createElement("div");
           c4.innerText = DATA[i].rating;
-          c4.id = "RATINGS";
-          card_detail.appendChild(c2);
+          c4.className = "RATINGS";
+          card_detail.appendChild(c4);
 
           const c5 = document.createElement("div");
           c5.innerText = "$325";
-          c4.id = DATA[i].price.rate;
+          c4.className = DATA[i].price.rate;
           card_detail.appendChild(c5);
 
           card.appendChild(card_detail);
@@ -101,10 +97,10 @@ function renderData(arrOfHotels) {
     }
   }
   viewall();
-  //   const hotelList = document.getElementById("hotel-list");
-  //   const name = arrOfHotels[0].name;
-  //   const rating = arrOfHotels[0].rating;
-  //   const image = arrOfHotels[0].images[0];
-  //   console.log("name:", name);
-  //   console.log("rating", rating);
+  const elements = document.getElementsByClassName("NAME");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", () => {
+      console.log(elements[i].innerText);
+    });
+  }
 }
