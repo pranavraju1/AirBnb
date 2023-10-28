@@ -1,0 +1,125 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.nav-container{
+    outline: 3px solid red;
+    height: auto;
+    width: 100%;
+    padding: 24px 24px 16px 24px;
+    display: flex;
+    flex-direction:column;
+    gap: 24px;
+}
+.nav1{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+.nav1-1{
+    display: flex;
+    height: 32px;
+    padding-right: 0px;
+    align-items: center;
+    flex: 1 0 0;
+}
+.nav1-2{
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    align-items: center;
+    gap: 16px;
+    border-radius: 1000px;
+    border: 1px solid var(--gray-200, #E5E7EB);
+    background: var(--white, #FFF);
+    /* shadow-md */
+    box-shadow: 0px 4px 6px 0px rgba(31, 41, 55, 0.10), 0px 2px 4px 0px rgba(31, 41, 55, 0.06);
+
+}
+.search-logo {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 32px;
+    height: 32px;
+    align-self: stretch;
+    border-radius: 100px;
+    background: #DE3151;
+  }
+  .nav1-3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+  }
+  .nav1-3-3{
+    display: flex;
+    padding: 8px 8px 8px 16px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid var(--gray-200, #E5E7EB);
+    background: var(--white, #FFF);
+  }
+
+  .nav2{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+.nav2-btns{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid var(--gray-200, #E5E7EB);
+    background: var(--white, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(31, 41, 55, 0.08);
+    font-size: 12px;
+}
+
+/*************************************************************/
+
+#rest-container{
+    display: flex;
+    flex-direction: row;
+}
+#details{
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+    align-self: stretch;
+    outline: 3px solid orange;
+}
+.map{
+    width: 600px;
+    height: 652px;
+    flex-shrink: 0;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    outline: 3px solid black;
+}
+#card{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+#card-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+}
