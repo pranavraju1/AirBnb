@@ -39,7 +39,7 @@ getData();
 
 function renderData(arrOfHotels) {
   DATA = arrOfHotels;
-  // console.log(DATA);
+  console.log(DATA);
   function viewall() {
     const details = document.getElementById("details");
     for (let i = 0; i < 10; i++) {
@@ -99,8 +99,24 @@ function renderData(arrOfHotels) {
   viewall();
   const elements = document.getElementsByClassName("NAME");
   for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", () => {
-      console.log(elements[i].innerText);
+    const namu = elements[i].parentNode.parentNode;
+    namu.addEventListener("click", () => {
+      const name = elements[i].innerText;
+      console.log(name);
+      for (let j = 0; j < DATA.length; j++) {
+        if (name == DATA[j].name) {
+          let lattitude = DATA[j].lat;
+          let longitude = DATA[j].lng;
+          // console.log(lattitude, longitude);
+          mapit(lattitude, longitude);
+        }
+      }
     });
+  }
+
+  function mapit(lattitude, longitude) {
+    const SRC = `https://maps.google.com/maps?q=${lattitude}, ${longitude}&output=embed`;
+    const map = document.getElementsByTagName("iframe")[0];
+    map.src = SRC;
   }
 }
