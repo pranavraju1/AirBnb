@@ -7,7 +7,7 @@ body{
     align-items: center;
     gap: 24px;
     align-self: stretch;
-    outline: 3px solid orange;
+    /* outline: 3px solid orange; */
 }
 .nav1{
     display: flex;
@@ -196,6 +196,11 @@ body{
     align-items: center;
     gap: 8px;
     align-self: stretch;
+}
+#hostpic{
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
 }
 #pricecard{
     display: flex;

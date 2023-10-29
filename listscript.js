@@ -75,6 +75,8 @@ function renderData(apidata) {
         bed.innerText = DATA[i].beds + " bed";
         const bath = document.getElementById("bath");
         bath.innerText = DATA[i].bathrooms + " bath";
+        const hostpic = document.getElementById("hostpic");
+        hostpic.src = DATA[i].hostThumbnail;
 
         function pricecalculation() {
           const in_date = new Date(localStorage.getItem("in_date"));
