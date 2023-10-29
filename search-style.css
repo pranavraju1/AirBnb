@@ -120,6 +120,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 55px;
     flex: 1 0 0;
+}
+/*******************************************/
+.NAME{
+    color: var(--gray-700, #374151);
+    font-size: 20px;
+    font-weight: 500;
+}
+.DETAILS{
+    color: var(--gray-500, #6B7280);
+    font-size: 14px; 
+}
+.PRICE{
+    display: inline;
+    font-weight: 500;
+    color: var(--gray-700, #374151);
+    margin-left: 250px;
 }

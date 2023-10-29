@@ -15,12 +15,14 @@ const guest_number = document.getElementById("guest_number");
 guest_number.innerText = guests + " " + "Guests";
 
 let DATA;
+// const limitError = "You have reached the limit generate new api code";
+
 const url =
-  "https://airbnb13.p.rapidapi.com/search-location?location=Paris&checkin=2023-10-29&checkout=2023-10-30&adults=1&children=0&infants=0&pets=0&page=1&currency=USD";
+  "https://airbnb13.p.rapidapi.com/search-location?location=Paris&checkin=2023-11-16&checkout=2023-11-17&adults=1&children=0&infants=0&pets=0&page=1&currency=USD";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "76ff333793msh29c1cd56b392b4dp1cbd49jsn4b73e1e9d22f",
+    "X-RapidAPI-Key": "e88ff35bcbmshe9dc14252b01a39p18aa91jsn085f04ee2915",
     "X-RapidAPI-Host": "airbnb13.p.rapidapi.com",
   },
 };
@@ -33,6 +35,7 @@ async function getData() {
     renderData(result.results);
   } catch (error) {
     console.log(error);
+    console.log("exceeded limi amount");
   }
 }
 getData();
@@ -65,7 +68,7 @@ function renderData(arrOfHotels) {
           card.appendChild(image);
 
           const card_detail = document.createElement("div");
-          card_detail.className = "card-detail";
+          card_detail.id = "card-detail";
 
           const c2 = document.createElement("div");
           c2.innerText = DATA[i].name;
@@ -81,12 +84,22 @@ function renderData(arrOfHotels) {
           const c4 = document.createElement("div");
           c4.innerText = DATA[i].rating;
           c4.className = "RATINGS";
-          card_detail.appendChild(c4);
+
+          const lineelements = document.createElement("div");
+          lineelements.style = "display: inline; gap:20px;";
+          const star = document.createElement("img");
+          star.src = "resources/star.png";
+          lineelements.appendChild(star);
+
+          // lineelements.innerText = "(235)";
 
           const c5 = document.createElement("div");
-          c5.innerText = "$325";
-          c4.className = DATA[i].price.rate;
-          card_detail.appendChild(c5);
+          c5.innerText = "$" + DATA[i].price.rate + " /night";
+          c5.className = "PRICE";
+          lineelements.appendChild(c5);
+
+          c4.appendChild(lineelements);
+          card_detail.appendChild(c4);
 
           card.appendChild(card_detail);
 
